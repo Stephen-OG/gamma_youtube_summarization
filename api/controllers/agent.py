@@ -2,14 +2,13 @@ from fastapi import APIRouter, HTTPException
 
 from api.models.youtube import QueryParam, Transcript
 from ..config.config import collection
-from ..models.user import User
 from dotenv import load_dotenv
 from ..services.summarize import extract_transcript, generate_summary, search_youtube_video
 load_dotenv()
 
-router = APIRouter()
+router = APIRouter(prefix='/api')
 
-@router.post("/api/summarize")
+@router.post("/summarize")
 async def summary(query: QueryParam):
     # Step 3: Generate the summary
     summary = await generate_summary(query.title)

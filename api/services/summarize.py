@@ -58,7 +58,6 @@ async def generate_summary(title: str):
             messages=messages,
             tools=tools,  
             tool_choice="auto",
-            max_tokens=400
         )
 
         print("response1", response)

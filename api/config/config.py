@@ -9,7 +9,6 @@ MONGO_URL = os.getenv("MONGO_URL")
 client = AsyncIOMotorClient(MONGO_URL)
 db = client.youtube_db  # Database
 collection = {
-    "users": db.users,
     "videos":db.youtube_videos,
     }  # Collections
 

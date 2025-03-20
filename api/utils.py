@@ -7,11 +7,6 @@ def run_in_executor(func, *args):
     loop = asyncio.get_running_loop()
     return loop.run_in_executor(executor, func, *args)
 
-# Helper Function to Convert MongoDB Document
-def user_serializer(user) -> dict:
-    return {"id": str(user["_id"]), "name": user["name"], 
-            "email": user["email"],"username": user["username"]}
-
 
 def video_serializer(video) -> dict:
     return {"id": str(video["_id"]), "title": video["title"], "video_url": 
